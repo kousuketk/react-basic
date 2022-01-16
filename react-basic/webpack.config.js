@@ -5,6 +5,11 @@ var path = require("path");
 module.exports = {
   context: path.join(__dirname, "src"),
   entry: "./js/client.js",
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "src"),
+    },
+  },
   module: {
     rules: [
       {
