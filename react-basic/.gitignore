@@ -1,2 +1,8 @@
 # node_modules
 /node_modules
+
+# compiled file by webpack
+client.min.js
+
+# others
+.DS_Store
