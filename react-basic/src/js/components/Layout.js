@@ -7,17 +7,16 @@ export default class Layout extends React.Component {
     super();
     this.state = { name: "layout component name", title: "Welcome" };
   }
+  changeTitle(title) {
+    this.setState({ title });
+  }
   render() {
-    setTimeout(() => {
-      this.setState({ name: "name changed" });
-    }, 1000);
-    setTimeout(() => {
-      this.setState({ title: "Welcome message has changed" });
-    }, 2000);
     return (
       <div>
-        <Header title={this.state.title} />
-        <Header title={"thank you!"} />
+        <Header
+          changeTitle={this.changeTitle.bind(this)}
+          title={this.state.title}
+        />
         <h1>{this.state.name}</h1>
         <Footer />
       </div>
