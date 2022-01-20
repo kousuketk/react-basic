@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  NavLink,
+  useParams,
+} from "react-router-dom";
 
 function App() {
   return (
@@ -6,18 +12,23 @@ function App() {
       <h1>Hello React Router</h1>
       <ul>
         <li>
-          <NavLink activeClassName="active" to="/">
+          <NavLink activeclassname="active" to="/">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/about">
+          <NavLink activeclassname="active" to="/about">
             About
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/contact">
+          <NavLink activeclassname="active" to="/contact">
             Contact
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeclassname="active" to="/posts">
+            Posts
           </NavLink>
         </li>
       </ul>
@@ -25,6 +36,8 @@ function App() {
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/posts/:id" element={<PostId />}></Route>
+        <Route path="/posts" element={<Posts />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
@@ -45,6 +58,16 @@ function Contact() {
 
 function NotFound() {
   return <h2>Not Found Page</h2>;
+}
+
+function PostId() {
+  const params = useParams();
+  const id = params.id;
+  return <h2>Post List {id}</h2>;
+}
+
+function Posts() {
+  return <h2>Post List</h2>;
 }
 
 export default App;
