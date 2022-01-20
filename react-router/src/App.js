@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 function App() {
   return (
@@ -6,13 +6,19 @@ function App() {
       <h1>Hello React Router</h1>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink activeClassName="active" to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink activeClassName="active" to="/about">
+            About
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <NavLink activeClassName="active" to="/contact">
+            Contact
+          </NavLink>
         </li>
       </ul>
       <Routes>
