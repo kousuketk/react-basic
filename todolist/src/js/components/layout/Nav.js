@@ -23,7 +23,6 @@ export default class Nav extends React.Component {
     const settingsClass = location.pathname.match(/^\/settings/)
       ? "active"
       : "";
-    const navClass = collapsed ? "collapse" : "";
 
     return (
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
