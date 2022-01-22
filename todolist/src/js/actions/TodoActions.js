@@ -13,3 +13,23 @@ export function deleteTodo(id) {
     id: id,
   });
 }
+
+export function reloadTodos() {
+  setTimeout(() => {
+    dispatcher.dispatch({
+      type: "RECEIVE_TODOS",
+      todos: [
+        {
+          id: 11121314,
+          text: "Go Shopping Again",
+          complete: false,
+        },
+        {
+          id: 21222324,
+          text: "Sleep At The Yard.",
+          complete: true,
+        },
+      ],
+    });
+  }, 1000);
+}
